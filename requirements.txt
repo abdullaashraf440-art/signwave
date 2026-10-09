@@ -1,0 +1,28 @@
+# Core vision
+opencv-python>=4.9.0
+# NOTE: pinned (not a floor) -- mediapipe removed the legacy
+# `mediapipe.solutions.holistic` API used by vision/landmark_extractor.py
+# in releases after 0.10.14. If you upgrade mediapipe, port
+# landmark_extractor.py to the newer Tasks API (PoseLandmarker +
+# HandLandmarker) first.
+mediapipe==0.10.14
+numpy>=1.24,<2.0
+
+# Sequence modeling
+torch>=2.2.0
+transformers>=4.40.0
+sentencepiece>=0.2.0    # tokenizer backend used by flan-t5
+
+# TTS
+pyttsx3>=2.90
+# --- optional, only needed for the "speecht5" TTS backend ---
+# datasets>=2.19.0
+# soundfile>=0.12.1
+# sounddevice>=0.4.6
+
+# Config / utils
+PyYAML>=6.0
+
+# Testing
+pytest>=8.0.0
+pytest-mock>=3.14.0
